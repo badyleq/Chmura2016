@@ -12,15 +12,16 @@ if($link === false){
 }
 
 // Escape user inputs for security
-$id_wyk = mysqli_real_escape_string($link, $_POST['id_wyk']);
-$id_prow = mysqli_real_escape_string($link, $_POST['id_prow']);
+$dane_prow = mysqli_real_escape_string($link, $_POST['dane_prow']);
 $title = mysqli_real_escape_string($link, $_POST['title']);
 $date = mysqli_real_escape_string($link, $_POST['date']);
 $time = mysqli_real_escape_string($link, $_POST['time']);
 $details = mysqli_real_escape_string($link, $_POST['details']);
 
 // attempt insert query execution
-$sql = "INSERT INTO lista_wykladow (id_prowadzacego, temat, data, godzina_start, szczegoly_wykladu) VALUES (1, '$title', '$date', '$time', '$details')";
+$sql = "INSERT INTO lista_wykladow (id_prowadzacego, temat, data, godzina_start, szczegoly_wykladu) VALUES (
+ (SELECT `id_prowadzacego` FROM `lista_prowadzacych` where concat(`nazwisko_prowadzacego`,' ',`imie_prowadzacego`) = '$dane_prow'),
+  '$title', '$date', '$time', '$details')";
 if(mysqli_query($link, $sql)){
   echo
   '<script>  window.location = "'.$SITE_URL.'../index.php" </script>';

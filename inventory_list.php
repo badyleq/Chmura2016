@@ -166,16 +166,13 @@ if (isset($_POST['nazwa'])) {
           $array[] = $row['nazwisko_prowadzacego']." ". $row['imie_prowadzacego'];
         }
         ?>
-        <select name="id_wyk" id="id_wyk">
+        <select name="dane_prow" id="dane_prow">
           <?php foreach ($array as $option): ?>
             <option value="<?php echo $option; ?>">
               <?php echo $option; ?>
             </option>
           <?php endforeach; ?>
         </select> <br />
-        <span>działa! jebane gowno :D</span> <br />
-        <span>tylko teraz nie działa dodawanie wykladu, bo tam trzeba przekazac id prowadzacego, a nie imie i nazwisko</span> <br />
-        <span>teraz bedzie trzeba zapytanko skontruowac ktore bedzie wrzucac do INSERTa id zamiast imienia i nazwiska</span>
         <label style="margin-top: 30px;">Tytuł wykładu</label>
         <input type="text" name="title" id="title" class="field-long" placeholder="Tytuł wykładu" style="margin-bottom: 30px;"/>
         <label>Szczegóły</label>

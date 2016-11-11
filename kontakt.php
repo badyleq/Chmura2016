@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -50,15 +59,15 @@ if (empty($_POST['submit'])) {
 <textarea name=\"tresc\" id=\"tresc\" class=\"field-long field-textarea\" placeholder=\"Wiadomość\" style=\"margin-bottom: 30px;\"></textarea>
 
 <label>Imię i nazwisko</label>
-<input type=\"text\" name=\"nazwa\" id=\"nazwa\" class=\"field-long\" placeholder=\"Imie i nazwisko\" style=\"margin-bottom: 30px;\"/>
+<input type=\"text\" name=\"nazwa\" class=\"field-long\" placeholder=\"Imie i nazwisko\" style=\"margin-bottom: 30px;\"/>
 <label>Adres e-mail</label>
-<input type=\"text\" name=\"email\" id=\"email\" class=\"field-long\" placeholder=\"Adres e-mail\" style=\"margin-bottom: 30px;\"/>
+<input type=\"text\" name=\"email\" class=\"field-long\" placeholder=\"Adres e-mail\" style=\"margin-bottom: 30px;\"/>
 
-<input type=\"submit\" name=\"button\" class=\"field-divided\" style=\"margin:0;\" value=\"Wyślij\">
+<input type=\"submit\" name=\"submit\" class=\"field-divided\" style=\"margin:0;\" value=\"Wyślij\">
 <input type=\"reset\" value=\"Od nowa\" class=\"field-divided\" style=\"margin:0;\"></form>";
 }
 elseif (!empty($_POST['tresc']) && !empty($_POST['nazwa']) && !empty($_POST['email'])) {
-    $message = "Treść wiadomości:\n$_POST[tresc]\nWysłał: $_POST[imie]\ne-mail: $_POST[email]";
+    $message = "Treść wiadomości:\n$_POST[tresc]\nWysłał: $_POST[nazwa]\ne-mail: $_POST[email]";
     $header = "From: $_POST[nazwa] <$_POST[email]>";
     @mail("deli.gares@gmail.com","Wiadomosc ze strony WWW","$message","$header")
     or die('Nie udało się wysłać wiadomości');
