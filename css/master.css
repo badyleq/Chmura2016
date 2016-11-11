@@ -25,6 +25,8 @@
 .form-style-1 input[type=time],
 .form-style-1 input[type=url],
 .form-style-1 input[type=email],
+.form-style-1 input[type=reset],
+textarea,
 select{
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -91,4 +93,26 @@ select{
 }
 .form-style-1 .required{
     color:red;
+}
+.form-style-1 input[type=reset], .form-style-1 input[type=button]{
+  border: 1px solid #fff;
+  border-radius: 10px;
+    padding: 0 20px;
+    line-height: 56px;
+    letter-spacing: .1em;
+    height: 54px;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    text-align: center;
+    background: #f16529;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    margin: 25px;
+}
+.form-style-1 input[type=reset]:hover, .form-style-1 input[type=button]:hover{
+    background: #e44d26;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
 }

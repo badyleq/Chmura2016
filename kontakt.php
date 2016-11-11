@@ -1,20 +1,21 @@
-<?php header('Content-type: text/html; charset=utf-8'); ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
     <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title></title>
         <meta name="description" content="">
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
+
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
@@ -25,11 +26,10 @@
 
         <div class="header-container">
             <header class="wrapper clearfix">
-                <span class="title">Panel administracyjny</span>
-                <nav>
+                <h1 class="title">Formularz kontaktowy</h1>
+			<nav>
                     <ul>
-                      <li><a href="http://rafal.ebond.pl/inventory_list.php">Dodaj wykład</a></li>
-                        <li><a href="http://rafal.ebond.pl/index.php">Wyloguj</a></li>
+                        <li><a href="http://rafal.ebond.pl/index.php">Strona główna</a></li>
                     </ul>
                 </nav>
             </header>
@@ -38,46 +38,58 @@
         <div class="main-container">
             <div class="main wrapper clearfix">
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Lista wyk�ad�w</title>
-</head>
-
-<body>
 <div align="center" id="mainWrapper">
-  <div id="pageContent">
-    <a name="inventoryForm" id="inventoryForm"></a>
-    <h3>
-    Dodawanie nowego prowadzącego
-    </h3>
-    <form id="form1" name="form1" method="post" action="php/new_lector.php">
+   <div id="pageContent"><br />
       <div class="form-style-1">
 
+<?php
+if (empty($_POST['submit'])) {
+    echo "<form method=\"post\">
 
-        <label>Imie prowadzącego</label>
-        <input type="text" name="lector_name" id="lector_name" class="field-long" placeholder="Imie" style="margin-bottom: 30px;"/>
-        <label>Nazwisko prowadzącego</label>
-        <input type="text" name="lector_lastname" id="lector_lastname" class="field-long" placeholder="Nazwisko" style="margin-bottom: 30px;"></input>
-        <label>Firma</label>
-        <input type="text" name="lector_company" id="lector_lcompany" class="field-long" placeholder="Nazwa firmy" style="margin-bottom: 30px;"></input>
-        <label>Szczegoly o prowadzacym</label>
-        <textarea name="lector_details" id="lector_details" class="field-long field-textarea" placeholder="O prowadzącym" style="margin-bottom: 30px;"></textarea>
-        <input type="submit" name="button" id="button" value="Dodaj prowadzącego" />
-      </div>
-    </form>
+<label>Treść wiadomości</label>
+<textarea name=\"tresc\" id=\"tresc\" class=\"field-long field-textarea\" placeholder=\"Wiadomość\" style=\"margin-bottom: 30px;\"></textarea>
 
+<label>Imię i nazwisko</label>
+<input type=\"text\" name=\"nazwa\" id=\"nazwa\" class=\"field-long\" placeholder=\"Imie i nazwisko\" style=\"margin-bottom: 30px;\"/>
+<label>Adres e-mail</label>
+<input type=\"text\" name=\"email\" id=\"email\" class=\"field-long\" placeholder=\"Adres e-mail\" style=\"margin-bottom: 30px;\"/>
+
+<input type=\"submit\" name=\"button\" class=\"field-divided\" style=\"margin:0;\" value=\"Wyślij\">
+<input type=\"reset\" value=\"Od nowa\" class=\"field-divided\" style=\"margin:0;\"></form>";
+}
+elseif (!empty($_POST['tresc']) && !empty($_POST['nazwa']) && !empty($_POST['email'])) {
+    $message = "Treść wiadomości:\n$_POST[tresc]\nWysłał: $_POST[imie]\ne-mail: $_POST[email]";
+    $header = "From: $_POST[nazwa] <$_POST[email]>";
+    @mail("deli.gares@gmail.com","Wiadomosc ze strony WWW","$message","$header")
+    or die('Nie udało się wysłać wiadomości');
+
+    echo "<div align=\"center\"><strong>Wiadomość została wysłana poprawnie</strong></div>";
+    echo '<br><a href="http://rafal.ebond.pl/index.php">Powrót do strony głównej</a>';
+
+}
+else
+{
+  echo "<div align=\"center\"><strong>Wypełnij wszystkie pola formularza !</strong></div>";
+    echo '<br><a href="http://rafal.ebond.pl/kontakt.php">Powrót do formularza</a>';
+
+}
+
+?>
+
+
+
+    </div>
+    <br />
+  <br />
+  <br />
   </div>
 </div>
+
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->
 
         <div class="footer-container">
-            <footer class="wrapper">
-
-            </footer>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

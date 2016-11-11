@@ -26,9 +26,9 @@
                 <h1 class="title">h1.title</h1>
                 <nav>
                     <ul>
-                        <li><a href="#">nav ul li a</a></li>
-                        <li><a href="#">nav ul li a</a></li>
-                        <li><a href="#">nav ul li a</a></li>
+                        <li><a href="http://rafal.ebond.pl/logowanie_uzytkownika.php">Logowanie</a></li>
+                        <li><a href="http://rafal.ebond.pl/rejestracja.php">Rejestracja</a></li>
+                        <li><a href="http://rafal.ebond.pl/kontakt.php">Kontakt</a></li>
                     </ul>
                 </nav>
             </header>
