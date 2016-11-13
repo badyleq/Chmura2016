@@ -38,6 +38,8 @@
 <div align="center" id="mainWrapper">
   <div id="pageContent"><br />
 
+    <span>Masz już konto? <a href="http://rafal.ebond.pl/logowanie.php">Zaloguj się!</a></span>
+
 
 <?php include("config.php");
 
@@ -110,9 +112,9 @@ echo '<br><a href="logowanie.php">Logowanie</a>';
 }
 ?>
 
-<div align="center" id="mainWrapper">
+<div style="padding-top:30px;" align="center" id="mainWrapper">
 
-<tr><strong>Rejestracja nowego użytkownika</strong></tr>
+<strong>Rejestracja nowego użytkownika</strong>
 <form method="post" action="rejestracja.php?akcja=wykonaj">
   <div class="form-style-1">
 

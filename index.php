@@ -23,10 +23,10 @@
 
         <div class="header-container">
             <header class="wrapper clearfix">
-                <h1 class="title">h1.title</h1>
+                <h1 class="title">Wykłady eksperckie PŁ</h1>
                 <nav>
                     <ul>
-                        <li><a href="http://rafal.ebond.pl/logowanie_uzytkownika.php">Logowanie</a></li>
+                        <li><a href="http://rafal.ebond.pl/logowanie.php">Logowanie</a></li>
                         <li><a href="http://rafal.ebond.pl/rejestracja.php">Rejestracja</a></li>
                         <li><a href="http://rafal.ebond.pl/kontakt.php">Kontakt</a></li>
                     </ul>
