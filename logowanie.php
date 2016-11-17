@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>Wykłady Eksperckie CTI</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -32,6 +32,8 @@
                 </nav>
             </header>
         </div>
+        <div class="myDiv">
+
 
         <div class="main-container">
             <div class="main wrapper clearfix">
@@ -40,7 +42,7 @@
               <form method="POST" action="login.php">
         <strong>Zaloguj się</strong>
         <div class="form-style-1">
-  <label>Login</label>
+  <label>Numer indeksu</label>
 <input maxlength="18" type="text" name="login" class="field-long"/>
 <label>Hasło</label>
 <input maxlength="32" type="password" name="haslo" class="field-long"/>
@@ -52,6 +54,7 @@
   </div>
             </div> <!-- #main -->
         </div> <!-- #main-container -->
+      </div>
 
         <div class="footer-container">
             <footer class="wrapper">

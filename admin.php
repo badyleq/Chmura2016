@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>Wykłady Eksperckie CTI</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -21,6 +21,8 @@
                 <h1 class="title">Strefa administratora</h1>
             </header>
         </div>
+        <div class="myDiv">
+
         <?php include('logowanie_admin.php'); ?>
           <div class="main wrapper clearfix">
             <div align="center" id="mainWrapper">
@@ -39,6 +41,7 @@
               </div>
             </div>
           </div>
+        </div>
 
         <div class="footer-container">
             <footer class="wrapper"></footer>

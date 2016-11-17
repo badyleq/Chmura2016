@@ -24,6 +24,15 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
+a{
+  text-decoration: none;
+}
+a:visited{
+  color:black;
+}
+a:link{
+  color:black;
+}
 
 
 audio,
@@ -63,8 +72,8 @@ body {
 }
 
 .wrapper {
-    width: 90%;
-    margin: 0 5%;
+  width: 90%;
+  margin: 0 5%;
 }
 
 /* ===================

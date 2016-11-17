@@ -1,12 +1,13 @@
-
-
-
-
-
-
-
-
-
+<?php
+session_start();
+include("config.php");
+$login = $_SESSION['login'];
+$haslo = $_SESSION['haslo'];
+$user = mysql_fetch_array(mysql_query("SELECT * FROM lista_uzytkownikow WHERE `login`='$login' AND `haslo`='$haslo' LIMIT 1"));
+    if (empty($user[id]) OR !isset($user[id])) {
+}
+else echo 'Jestes zalogowany jako: <strong>'.$user[login].'</strong> ';
+?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -15,7 +16,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>Wykłady Eksperckie CTI</title>
         <meta name="description" content="">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,6 +44,8 @@
                 </nav>
             </header>
         </div>
+        <div class="myDiv">
+
 
         <div class="main-container">
             <div class="main wrapper clearfix">
@@ -88,17 +91,18 @@ else
 
 
     </div>
-    <br />
-  <br />
-  <br />
   </div>
 </div>
 
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->
+      </div>
 
         <div class="footer-container">
+            <footer class="wrapper">
+                <a href="http://rafal.ebond.pl/admin.php">Admin</a>
+            </footer>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

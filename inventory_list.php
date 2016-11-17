@@ -7,7 +7,7 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>Wykłady Eksperckie CTI</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -34,6 +34,8 @@
                 </nav>
             </header>
         </div>
+        <div class="myDiv">
+
 
         <div class="main-container">
             <div class="main wrapper clearfix">
@@ -213,6 +215,7 @@ if (isset($_POST['nazwa'])) {
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->
+      </div>
 
         <div class="footer-container">
             <footer class="wrapper">

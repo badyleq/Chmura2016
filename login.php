@@ -22,12 +22,13 @@ exit;
 echo '<p class="alert">Wypełnij pole z hasłem!</p>';
 exit;
 }
-$istnick = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM lista_uzytkownikow WHERE imie = '$login' AND haslo = '$haslo'")); // sprawdzenie czy istnieje uzytkownik o takim nicku i hasle
+$istnick = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM lista_uzytkownikow WHERE nr_indeksu = '$login' AND haslo = '$haslo'")); // sprawdzenie czy istnieje uzytkownik o takim nicku i hasle
     if ($istnick[0] == 0) {
-echo 'Logowanie nieudane. SprawdĽ pisownię nicku oraz hasła.';
+
+header("Location: blad_logowania.php");
     } else {
 
-$_SESSION['imie'] = $login;
+$_SESSION['login'] = $login;
 $_SESSION['haslo'] = $haslo;
 
 header("Location: index.php");
