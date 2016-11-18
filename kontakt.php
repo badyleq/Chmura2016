@@ -1,13 +1,3 @@
-<?php
-session_start();
-include("config.php");
-$login = $_SESSION['login'];
-$haslo = $_SESSION['haslo'];
-$user = mysql_fetch_array(mysql_query("SELECT * FROM lista_uzytkownikow WHERE `login`='$login' AND `haslo`='$haslo' LIMIT 1"));
-    if (empty($user[id]) OR !isset($user[id])) {
-}
-else echo 'Jestes zalogowany jako: <strong>'.$user[login].'</strong> ';
-?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->

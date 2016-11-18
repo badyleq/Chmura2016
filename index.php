@@ -32,16 +32,6 @@
         </header>
       </div>
       <div class="myDiv">
-    <!-- <div id="fb-root"></div>
-      <script>
-        (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-        fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-      </script> -->
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -50,15 +40,6 @@
         <div class="main-container">
             <div class="main wrapper clearfix">
               <div class="form-style-1">
-		  <!-- <div>
-                <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a>
-                  <script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-                 <!-- w wypadku fb : w tej wersji wyświetli się jeszcze pod nim lista osób -->
-                <!-- <div class="fb-like" data-href="http://rafal.ebond.pl/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-                <div class="fb-like" data-href="http://rafal.ebond.pl/" data-layout="standard" data-action="recommend"></div>
-                <script src="https://apis.google.com/js/platform.js" async="" defer=""></script>
-                  <g:plusone>+</g:plusone>
-              </div> -->
 
 
                     <section>

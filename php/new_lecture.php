@@ -24,7 +24,7 @@ $sql = "INSERT INTO lista_wykladow (id_prowadzacego, temat, data, godzina_start,
   '$title', '$date', '$time', '$details')";
 if(mysqli_query($link, $sql)){
   echo
-  '<script>  window.location = "'.$SITE_URL.'../index.php" </script>';
+  '<script>  window.location = "'.$SITE_URL.'../inventory_list.php" </script>';
   // alert("Dodano wykład!");
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);

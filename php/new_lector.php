@@ -21,7 +21,7 @@ $lector_details = mysqli_real_escape_string($link, $_POST['lector_details']);
 $sql = "INSERT INTO lista_prowadzacych (imie_prowadzacego, nazwisko_prowadzacego, nazwa_firmy, szczegoly_prowadzacego) VALUES ('$lector_name', '$lector_lastname', '$lector_company', '$lector_details')";
 if(mysqli_query($link, $sql)){
   echo
-  '<script>  window.location = "'.$SITE_URL.'../index.php" </script>';
+  '<script>  window.location = "'.$SITE_URL.'../inventory_list.php" </script>';
   // alert("Dodano wykład!");
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
