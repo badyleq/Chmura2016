@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Wykłady Eksperckie CTI</title>
+    <title>Wyklady Eksperckie CTI</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -16,7 +16,7 @@
     <?php include "menu.php" ?>
     <?php include "php/isLogged.php" ?>
     <div class="main wrapper clearfix">
-      <center><b>Logowanie nieudane, wpisz poprawne dane ! </b></center>
+      <center><b><br><br>Musisz być zalogowany aby zapisać się na wykład ! </b></center>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.1.1.min.js"><\/script>')</script>

@@ -1,9 +1,73 @@
 /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+header{
+	width:100%;
+	background:#1d1f20;
+	height:60px;
+	line-height:60px;
+}
+.hamburger{
+  background:none;
+  position:absolute;
+  top:0;
+  right:0;
+  line-height:45px;
+  padding:5px 15px 0px 15px;
+  color:#fff;
+  border:0;
+  font-size:1.4em;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10000000000000;
+}
+.cross{
+  background:none;
+  position:absolute;
+  top:0px;
+  right:0;
+  padding:13px 15px 0px 15px;
+  color:#fff;
+  border:0;
+  font-size:3em;
+  line-height:65px;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10000000000000;
+}
+.menu{z-index:1000000; font-weight:bold; font-size:0.8em; width:100%; background:#131313;  position:absolute; text-align:center;}
+.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
+.menu li {display: block;   padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
+.menu li:hover{display: block;    background:#181818; padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
+.menu ul li a { text-decoration:none;  margin: 0px; color:#fff;}
+.menu ul li a:hover {  color: #fff; text-decoration:none;}
+.menu a{text-decoration:none; color:white;}
+.menu a:hover{text-decoration:none; color:white;}
+
+
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #115C75;
+    text-align: center;
+    border-top: 20px solid #05475D;
+}
+
 html {
+    background-image: url("http://rafal.ebond.pl/img/bg2.jpg");
+    height: 100%;
     color: #222;
     font-size: 1em;
     line-height: 1.4;
-    min-width: 280px;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 ::-moz-selection {
@@ -24,23 +88,8 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
-a{
-  text-decoration: none;
-}
-a:visited{
-  color:black;
-}
-a:link{
-  color:black;
-}
 
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
+audio, canvas, iframe, img, svg, video {
     vertical-align: middle;
 }
 
@@ -52,6 +101,16 @@ fieldset {
 
 textarea {
     resize: vertical;
+}
+
+a {
+  text-decoration: none;
+}
+a:link {
+  color:black;
+}
+a:visited {
+  color:black;
 }
 
 
@@ -68,38 +127,39 @@ textarea {
    ========================================================================== */
 
 body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
 }
 
 .wrapper {
-  width: 90%;
-  margin: 0 5%;
+    width: 90%;
+    margin: 0 5%;
 }
+
 
 /* ===================
     ALL: Orange Theme
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #e44d26;
+    border-bottom: 20px solid #05475D;
 }
 
-.footer-container,
 .main aside {
-    border-top: 20px solid #e44d26;
+    border-top: 20px solid #05475D;
 }
 
-.header-container,
-.footer-container,
-.main aside {
-    background: #f16529;
+.header-container, .main aside {
+    background: #115C75;
 }
 
 .title {
-  color: white;
-  font-size: 25px;
-  font-weight: bold;
+    color: white;
 }
+
 
 /* ==============
     MOBILE: Menu
@@ -115,17 +175,14 @@ nav a {
     display: block;
     margin-bottom: 10px;
     padding: 15px 0;
-
     text-align: center;
     text-decoration: none;
     font-weight: bold;
-
     color: white;
-    background: #e44d26;
+    background: #05475D;
 }
 
-nav a:hover,
-nav a:visited {
+nav a:hover, nav a:visited {
     color: white;
 }
 
@@ -133,12 +190,14 @@ nav a:hover {
     text-decoration: underline;
 }
 
+
 /* ==============
     MOBILE: Main
    ============== */
 
 .main {
     padding: 30px 0;
+    z
 }
 
 .main article h1 {
@@ -150,10 +209,6 @@ nav a:hover {
     padding: 0px 5% 10px;
 }
 
-.footer-container footer {
-    color: white;
-    padding: 20px 0;
-}
 
 /* ===============
     ALL: IE Fixes
@@ -163,22 +218,10 @@ nav a:hover {
     padding-top: 20px;
 }
 
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* ==========================================================================
@@ -186,15 +229,9 @@ nav a:hover {
    ========================================================================== */
 
 @media only screen and (min-width: 480px) {
-
-/* ====================
+    /* ====================
     INTERMEDIATE: Menu
    ==================== */
-
-   .title{
-     font-size: 36px;
-   }
-
     nav a {
         float: left;
         width: 27%;
@@ -202,63 +239,49 @@ nav a:hover {
         padding: 25px 2%;
         margin-bottom: 0;
     }
-
     nav li:first-child a {
         margin-left: 0;
     }
-
     nav li:last-child a {
         margin-right: 0;
     }
-
-/* ========================
+    /* ========================
     INTERMEDIATE: IE Fixes
    ======================== */
-
     nav ul li {
         display: inline;
     }
-
     .oldie nav a {
         margin: 0 0.7%;
     }
 }
 
 @media only screen and (min-width: 768px) {
-
-/* ====================
+    /* ====================
     WIDE: CSS3 Effects
    ==================== */
-
-    .header-container,
-    .main aside {
+    .header-container, .main aside {
         -webkit-box-shadow: 0 5px 10px #aaa;
-           -moz-box-shadow: 0 5px 10px #aaa;
-                box-shadow: 0 5px 10px #aaa;
+        -moz-box-shadow: 0 5px 10px #aaa;
+        box-shadow: 0 5px 10px #aaa;
     }
-
-/* ============
+    /* ============
     WIDE: Menu
    ============ */
-
     .title {
         float: left;
     }
-
-    nav {
+    /*nav {
         float: right;
-        width: 38%;
+        width: 38%;*/
     }
-
-/* ============
+    /* ============
     WIDE: Main
    ============ */
-
     .main article {
         float: left;
         width: 57%;
     }
-
     .main aside {
         float: right;
         width: 28%;
@@ -266,16 +289,16 @@ nav a:hover {
 }
 
 @media only screen and (min-width: 1140px) {
-
-/* ===============
+    /* ===============
     Maximal Width
    =============== */
-
     .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
+        width: 1026px;
+        /* 1140px - 10% for margins */
         margin: 0 auto;
     }
 }
+
 
 /* ==========================================================================
    Helper classes
@@ -297,8 +320,7 @@ nav a:hover {
     width: 1px;
 }
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
     clip: auto;
     height: auto;
     margin: 0;
@@ -311,8 +333,7 @@ nav a:hover {
     visibility: hidden;
 }
 
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .clearfix:after {
     content: " ";
     display: table;
 }
@@ -322,70 +343,51 @@ nav a:hover {
 }
 
 .clearfix {
-  padding-top: 10px;
     *zoom: 1;
 }
+
 
 /* ==========================================================================
    Print styles
    ========================================================================== */
 
 @media print {
-    *,
-    *:before,
-    *:after {
+    *, *:before, *:after {
         background: transparent !important;
         color: #000 !important;
         box-shadow: none !important;
         text-shadow: none !important;
     }
-
-    a,
-    a:visited {
+    a, a:visited {
         text-decoration: underline;
     }
-
     a[href]:after {
         content: " (" attr(href) ")";
     }
-
     abbr[title]:after {
         content: " (" attr(title) ")";
     }
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
+    a[href^="#"]:after, a[href^="javascript:"]:after {
         content: "";
     }
-
-    pre,
-    blockquote {
+    pre, blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
     thead {
         display: table-header-group;
     }
-
-    tr,
-    img {
+    tr, img {
         page-break-inside: avoid;
     }
-
     img {
         max-width: 100% !important;
     }
-
-    p,
-    h2,
-    h3 {
+    p, h2, h3 {
         orphans: 3;
         widows: 3;
     }
-
-    h2,
-    h3 {
+    h2, h3 {
         page-break-after: avoid;
     }
 }

@@ -1,81 +1,48 @@
-﻿<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Wykłady Eksperckie CTI</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<?php include("config.php");?>
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Wykłady Eksperckie CTI</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/master.css" media="screen" title="no title">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  </head>
+  <body>
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/master.css" media="screen" title="no title">
+    <?php include "menu.php" ?>
+    <?php include "php/isLogged.php" ?>
 
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    </head>
-    <body>
-      <div class="header-container">
-        <header class="wrapper clearfix">
 
-          <h1 class="title">Wykłady eksperckie PŁ</h1>
-          <nav>
-            <ul>
-              <li><a href="http://rafal.ebond.pl/logowanie.php">Logowanie</a></li>
-              <li><a href="http://rafal.ebond.pl/rejestracja.php">Rejestracja</a></li>
-              <li><a href="http://rafal.ebond.pl/kontakt.php">Kontakt</a></li>
-            </ul>
-          </nav>
-        </header>
+    <div class="coutdown"> Do najblizszego wykladu zostalo<br/>
+      <div class='time'>
+        <?php include 'php/nearestLectureCoutdown.php'; ?>
       </div>
-      <div class="myDiv">
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-
-        <div class="main-container">
-            <div class="main wrapper clearfix">
-              <div class="form-style-1">
-
-
-                    <section>
-                      <h1>Lista wykładów</h1>
-                      <?php include('php/script.php'); ?>
-                    </section>
-              </div>
-
-                <!-- <aside>
-                    <h3>aside</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
-                </aside> -->
-
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
-
-      </div>
-        <div class="footer-container">
-            <footer class="wrapper">
-                <a href="http://rafal.ebond.pl/admin.php">Admin</a>
-            </footer>
+    </div>
+    <div class="myDiv">
+      <div class="main wrapper clearfix">
+        <div class="form-style-1">
+            <section>
+              <h1>Lista wykładów</h1>
+              <?php include('php/script.php'); ?>
+            </section>
         </div>
+      </div>
+    </div>
+    <div class="footer">
+      <a href="http://rafal.ebond.pl/admin.php">Admin</a>
+    </div>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script> -->
+    <script src="js/vendor/jquery-3.1.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+    <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.1.1.min.js"><\/script>')</script> -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
-    </body>
+  </body>
 </html>
