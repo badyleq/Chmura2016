@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js" lang="">
 <head>
   <meta charset="utf-8">
@@ -14,7 +14,7 @@
 </head>
 <body>
   <?php include "menu.php" ?>
-  <?php include "php/isLogged.php" ?>
+  <?php //include "php/isLogged.php" ?>
   <div class="main-container">
     <div class="main wrapper clearfix">
       <center><b>Nie udało się zalogować do strefy administracyjnej ! </b></center>

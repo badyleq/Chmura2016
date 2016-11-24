@@ -39,7 +39,7 @@ if ($existCount == 0) {
   </head>
   <body>
     <?php include "menu-admin.php" ?>
-    <?php include "php/isLogged.php" ?>
+    <?php //include "php/isLogged.php" ?>
     <div class="myDiv">
       <div class="main wrapper clearfix">
         <div align="center" id="mainWrapper">
@@ -56,7 +56,7 @@ if ($existCount == 0) {
                   $array[] = $row['nazwisko_prowadzacego']." ". $row['imie_prowadzacego'];
                 }
                 ?>
-                <select name="dane_prow" id="dane_prow">
+                <select class="field-long" name="dane_prow" id="dane_prow">
                   <?php foreach ($array as $option): ?>
                     <option value="<?php echo $option; ?>">
                       <?php echo $option; ?>
@@ -69,8 +69,8 @@ if ($existCount == 0) {
                 <label>Szczegóły</label>
                 <textarea name="details" id="details" class="field-long field-textarea" placeholder="O wykładzie" style="margin-bottom: 30px;"></textarea>
                 <label>Data i czas rozpoczęcia wykładu</label>
-                <input type="date" name="date" value="" style="margin-bottom: 30px;">
-                <input type="time" name="time" value="00:00">
+                <input type="date" class="field-long" name="date" value="" style="margin-bottom: 30px;">
+                <input type="time" class="field-long" name="time" value="00:00">
                 <input type="submit" name="button" id="button" value="Dodaj wykład" />
               </div>
             </form>

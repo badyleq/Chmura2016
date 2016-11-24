@@ -1,4 +1,7 @@
 <?php include("config.php");?>
+<?php
+error_reporting(0);
+?>
 
 <!DOCTYPE html>
 <html>
@@ -29,7 +32,7 @@
 
     <?php include "menu.php" ?>
     <?php include "php/isLogged.php" ?>
-    
+
     <div class="myDiv">
       <div class="main wrapper clearfix">
         <div class="form-style-1">
@@ -49,11 +52,17 @@
           echo 'Termin:  ' . $lecture['data'] . '<br><br>';
           echo $lecture['szczegoly_wykladu'] . '<br><br>';
           echo '<u>' . $teacher['imie_prowadzacego'].'</u> - ' .$teacher['szczegoly_prowadzacego'] . '<br><br>';
+          $liczba_zapisanych = $conn->query("select count(*) from testowa");
+          $zapisani = $liczba_zapisanych -> fetch_assoc();
+	  echo "Liczba osob zapisanych na wyklad: " .$zapisani['count(*)'] . '<br><br>';
           ?>
-	  <div align = "center"><a href="http://rafal.ebond.pl/zapis_wyklad.php"><input type="button" name="submit" value="Zapisz sie"></a><br><br></div>
-          <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a>
+
+		 
+
+	  <div align = "center"><a href="http://rafal.ebond.pl/zapis_wyklad.php"><input type="button" name="submit" value="Zapisz się"></a><br><br></div>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a>
           <script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-          <!-- w wypadku fb : w tej wersji wy�wietli si� jeszcze pod nim lista os�b -->
+          <!-- w wypadku fb : w tej wersji wyďż˝wietli siďż˝ jeszcze pod nim lista osďż˝b -->
           <div style="margin-top:2px;" class="fb-like" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
           <!-- <div class="fb-like" data-href="http://rafal.ebond.pl/" data-layout="standard" data-action="recommend"></div> -->
           <script src="https://apis.google.com/js/platform.js" async="" defer=""></script>

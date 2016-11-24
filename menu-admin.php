@@ -11,6 +11,7 @@ echo ' <header>
     <ul>
       <li><a href="http://rafal.ebond.pl/add_lector.php">Dodaj prowadzącego</a></li>
       <li><a href="http://rafal.ebond.pl/inventory_list.php">Dodaj wykład</a></li>
+      <li><a href="http://rafal.ebond.pl/wyloguj.php">Wyloguj</a></li>
     </ul>
 </div>'
 ?>
