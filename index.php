@@ -16,7 +16,7 @@
   <body>
 
     <?php include "menu.php" ?>
-    <?php include "php/isLogged.php" ?>
+    <?php include "php/isLogged.php" ?> 
 
 
     <div class="coutdown"> Do najblizszego wykladu zostalo<br/>

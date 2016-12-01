@@ -8,12 +8,7 @@ $managerID = preg_replace('#[^0-9]#i', '', $_SESSION["id"]);
 $manager = preg_replace('#[^A-Za-z0-9]#i', '', $_SESSION["manager"]);
 $password = preg_replace('#[^A-Za-z0-9]#i', '', $_SESSION["password"]);
 
-$db_host = "sql.s24.vdl.pl";
-$db_username = "bleizer_rafal";
-$db_pass = "7uDntXzn";
-$db_name = "bleizer_rafal";
-mysql_connect("$db_host","$db_username","$db_pass") or die ("could not connect to mysql");
-mysql_select_db("$db_name") or die ("no database");
+include("config.php");
 
 $sql = mysql_query("SELECT * FROM admin WHERE id='$managerID' AND username='$manager' AND password='$password' LIMIT 1");
 
@@ -51,10 +46,29 @@ if ($existCount == 0) {
               <div class="form-style-1">
                 <label>Imie prowadzącego</label>
                 <input type="text" name="lector_name" id="lector_name" class="field-long" placeholder="Imie" style="margin-bottom: 30px;"/>
-                <label>Nazwisko prowadzącego</label>
+				<label>Nazwisko prowadzącego</label>
                 <input type="text" name="lector_lastname" id="lector_lastname" class="field-long" placeholder="Nazwisko" style="margin-bottom: 30px;"></input>
                 <label>Firma</label>
-                <input type="text" name="lector_company" id="lector_lcompany" class="field-long" placeholder="Nazwa firmy" style="margin-bottom: 30px;"></input>
+				<?php
+                $conn = new mysqli('sql.s24.vdl.pl', 'bleizer_rafal', '7uDntXzn', 'bleizer_rafal');
+				$conn -> query ('SET NAMES utf8');
+				$conn -> query ('SET CHARACTER_SET utf8_unicode_ci');
+                $result = $conn->query("Select * from lista_logo where id_logo");
+                $array = array();
+                while($row = $result -> fetch_assoc()){
+                  $array[] = $row['nazwa_firmy'];
+				}
+
+                ?>
+                <select class="field-long" name="lector_company" id="lector_company">
+                  <?php foreach ($array as $option): ?>
+                    <option value="<?php echo $option; ?>">
+                      <?php echo $option;
+					  ?>
+                    </option>
+                  <?php endforeach;
+                  ?>
+                </select>
                 <label>Szczegoly o prowadzacym</label>
                 <textarea name="lector_details" id="lector_details" class="field-long field-textarea" placeholder="O prowadzącym" style="margin-bottom: 30px;"></textarea>
                 <input type="submit" name="button" id="button" value="Dodaj prowadzącego" />

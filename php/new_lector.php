@@ -18,7 +18,9 @@ $lector_company = mysqli_real_escape_string($link, $_POST['lector_company']);
 $lector_details = mysqli_real_escape_string($link, $_POST['lector_details']);
 
 // attempt insert query execution
-$sql = "INSERT INTO lista_prowadzacych (imie_prowadzacego, nazwisko_prowadzacego, nazwa_firmy, szczegoly_prowadzacego) VALUES ('$lector_name', '$lector_lastname', '$lector_company', '$lector_details')";
+$sql = "INSERT INTO lista_prowadzacych (imie_prowadzacego, nazwisko_prowadzacego, nazwa_firmy, szczegoly_prowadzacego,id_logo) VALUES 
+('$lector_name', '$lector_lastname', '$lector_company', '$lector_details', 
+(SELECT `id_logo` FROM `lista_logo` where nazwa_firmy= '$lector_company') )";
 if(mysqli_query($link, $sql)){
   echo
   '<script>  window.location = "'.$SITE_URL.'../inventory_list.php" </script>';

@@ -54,7 +54,7 @@ if ($existCount == 0) {
                 $array = array();
                 while($row = $result -> fetch_assoc()){
                   $array[] = $row['nazwisko_prowadzacego']." ". $row['imie_prowadzacego'];
-                }
+				}
                 ?>
                 <select class="field-long" name="dane_prow" id="dane_prow">
                   <?php foreach ($array as $option): ?>
@@ -70,7 +70,7 @@ if ($existCount == 0) {
                 <textarea name="details" id="details" class="field-long field-textarea" placeholder="O wykładzie" style="margin-bottom: 30px;"></textarea>
                 <label>Data i czas rozpoczęcia wykładu</label>
                 <input type="date" class="field-long" name="date" value="" style="margin-bottom: 30px;">
-                <input type="time" class="field-long" name="time" value="00:00">
+                <input type="time" class="field-long" name="time" value="15:00">
                 <input type="submit" name="button" id="button" value="Dodaj wykład" />
               </div>
             </form>

@@ -12,13 +12,18 @@ if (empty($user[id_uzytkownika]) OR !isset($user[id_uzytkownika])) {
 header("Location: must_log.php");
 exit;
 }
-$wyklad = mysql_fetch_array(mysql_query("SELECT * FROM testowa WHERE `nr_indeksu`='$login' LIMIT 1"));
-if (isset($wyklad[nr_indeksu])) {
+$url = $_SERVER['HTTP_REFERER'];
+$id_wykladu = substr("$url", -4);
+$student = mysql_fetch_array(mysql_query("SELECT * FROM lista_zapisow WHERE `nr_indeksu`='$login' LIMIT 1"));
+$wyklad =  mysql_fetch_array(mysql_query("SELECT * FROM lista_zapisow WHERE `id_wykladu`='$id_wykladu' LIMIT 1"));
+if (isset($wyklad[id_wykladu]) AND (isset($student[nr_indeksu]))) {
 header("Location: juz_zapisany.php");
 }
 else
 {
-$query = "INSERT INTO `testowa`(`nr_indeksu`) VALUES ('$login')";
+$url = $_SERVER['HTTP_REFERER'];
+$id_wykladu = substr("$url", -4);
+$query = "INSERT INTO lista_zapisow(`nr_indeksu`, `id_wykladu`, `data_zapisu`) VALUES ('$login', '$id_wykladu', SYSDATE())";
 mysql_query($query);
 header("Location: poprawny_zapis.php");
 }
