@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="18797ded-8aa5-4496-b7ec-255907002d4b" name="ebond" url="http://ftp.bleizer.linuxpl.eu">
+        <fileTransfer host="ftp.bleizer.linuxpl.eu" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

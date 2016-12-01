@@ -87,7 +87,11 @@ error_reporting(0);
           $zapisani = $liczba_zapisanych -> fetch_assoc();
           echo "Liczba osob zapisanych na wyklad: " .$zapisani['count(*)'] . '<br><br>';
 
-		  if($lecture['data']<=date('Y-m-d')){?>
+		  if($lecture['data']<=date('Y-m-d')){
+			$login = $_SESSION['login'];
+			$haslo = $_SESSION['haslo'];
+			if (!(empty($login)) AND !(empty($haslo))) {
+			  ?>
 
 		<div align ="center"><h2>Jak oceniasz wykład ?</h2></div>
 
@@ -111,7 +115,7 @@ if ((empty($login)) AND (empty($haslo))) {
 header("Location: must_log.php");
 }else{?>
             <?php
-				
+
                 $query = mysql_query("SELECT * FROM wcd_rate where id_wykladu = " .$_GET['id']);
                 while($data = mysql_fetch_assoc($query)){
                     $rate_db[] = $data;
@@ -136,13 +140,15 @@ header("Location: must_log.php");
     <div>Ocena to:  <?php echo $rate_value; ?></div>
 
   </div>
-  <div style="width: 82px;position:relative;left:40%;">
+  
+  <div style="position:relative;left:40%;">
   <div class="rate-result-cnt">
     <div class="rate-bg" style="width:<?php echo $rate_bg; ?>%"></div>
     <div class="rate-stars"></div>
   </div>
+			
 </div>
-
+<?php } ?>
 
 
         <div id="result"></div>
@@ -161,7 +167,15 @@ header("Location: must_log.php");
 				name="submit" value="Zapisz się"></a><br><br></div>
 
 		 <?php } ?>
-     <a href="http://rafal.ebond.pl/savsoftquiz_v3.0/index.php/quiz/quiz_detail/2">Quiz</a>
+     <?php
+     $resultQuiz = $conn->query("select * from savsoft_quiz where quiz_name = ".$_GET['id']);
+     $quiz = $resultQuiz -> fetch_assoc();
+     if($quiz){
+     echo '<div align="center"><a href="http://rafal.ebond.pl/savsoftquiz_v3.0/index.php/quiz/quiz_detail/'.$quiz['quid'].'"><input type="button" value="Quiz"></a></div>';
+   }
+     ?>
+     <br/>
+
      <?php include('php/social.php'); ?>
       </div>
     </div>
