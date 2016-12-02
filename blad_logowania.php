@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js" lang="">
   <head>
     <meta charset="utf-8">
@@ -14,7 +14,6 @@
   </head>
   <body>
     <?php include "menu.php" ?>
-    <?php include "php/isLogged.php" ?>
     <div class="main wrapper clearfix">
       <center><b>Logowanie nieudane, wpisz poprawne dane ! </b></center>
     </div>

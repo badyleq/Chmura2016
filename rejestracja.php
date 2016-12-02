@@ -62,6 +62,7 @@
               {
                 $komunikaty .= "Musisz wypełnić wszystkie pola!<br>";
               }
+               if ($spr5 < 4)
               {
                 $komunikaty .= "Hasło musi mieć przynajmniej 4 znaki<br>";
               }
@@ -83,17 +84,17 @@
               }
               if ($spr3[0] >= 1)
               {
-                $komunikaty .= "Nie można zarejestrować kilku kont na jedną pocztę o2.<br>";
+                $komunikaty .= "Nie można zarejestrować kilku kont na jeden adres email<br>";
               }
               if ($komunikaty)
               {
-                echo '<strong>Rejestracja nie powiodła się, popraw następujące błędy:</strong>'.$komunikaty.'<br>';
+                echo '<strong>Rejestracja nie powiodła sie popraw następujące błędy:</strong>'.$komunikaty.'<br>';
               }
               else
               {
                 $imie = str_replace ( ' ','', $imie );
                 $haslo = md5($haslo);
-                mysql_query("INSERT INTO `lista_uzytkownikow` (imie, nazwisko, nr_indeksu, email, haslo, wydzial) VALUES('$imie', '$nazwisko', '$nr_indeksu', '$email','$haslo','$wydzial')") or die("Nie mogłem Cie zarejestrować!");
+                mysql_query("INSERT INTO `lista_uzytkownikow` (imie, nazwisko, nr_indeksu, email, haslo, wydzial) VALUES('$imie', '$nazwisko', '$nr_indeksu', '$email','$haslo','$wydzial')") or die("Nie mogĹ‚em Cie zarejestrowaÄ‡!");
                 echo '<br><span style="color: green; font-weight: bold;">Zostałeś zarejestrowany '.$imie.'  '.$nazwisko.'. Teraz możesz się zalogować</span><br>';
                 echo '<br><a href="logowanie.php">Logowanie</a>';
               }
@@ -103,7 +104,7 @@
               <strong>Rejestracja nowego użytkownika</strong>
               <form method="post" action="rejestracja.php?akcja=wykonaj">
                 <div class="form-style-1">
-                  <label>Imie</label>
+                  <label>Imię</label>
                   <input maxlength="18" type="text" name="imie" class="field-long" value="<?=$imie?>"/>
                   <label>Nazwisko</label>
                   <input maxlength="18" type="text" name="nazwisko" class="field-long" value="<?=$nazwisko?>"/>
@@ -113,7 +114,7 @@
                   <input maxlength="18" type="text" name="wydzial" class="field-long" value="<?=$wydzial?>"/>
                   <label>Hasło</label>
                   <input maxlength="32" type="password" name="haslo" class="field-long">
-                  <label>Powtóz hasło</label>
+                  <label>Powtórz hasło</label>
                   <input maxlength="32" type="password" name="vhaslo" class="field-long">
                   <label>E-mail</label>
                   <input type="text" name="email" maxlength="50" class="field-long" value="<?=$email?>"/>
